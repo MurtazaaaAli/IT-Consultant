@@ -85,6 +85,15 @@
             z-index: -1;
             pointer-events: none;
         }
+
+        /* Profile image best-practice: reserve space (aspect-ratio) and avoid layout shift */
+        .profile-img {
+            aspect-ratio: 4 / 5; /* portrait */
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            display: block;
+        }
     </style>
 </head>
 <body class="bg-bgDark text-white font-sans antialiased selection:bg-primary selection:text-bgDark relative overflow-x-hidden">
@@ -168,85 +177,15 @@
                 <div class="relative animate-float">
                     <div class="absolute -inset-1 bg-gradient-to-r from-primary via-secondary to-accent rounded-3xl blur-xl opacity-50"></div>
                     <div class="relative glass rounded-3xl p-4 neon-border max-w-sm w-full overflow-hidden">
-                        <!-- Use the repository image with a relative path so it works on GitHub Pages and locally when cloned -->
-                        <img src="Murtaza-Pic.jpeg" alt="Murtaza Ali" class="rounded-2xl w-full object-cover shadow-2xl" loading="lazy">
+                        <!-- Picture + reserved aspect ratio to avoid layout shift; using repo raw URL as fallback -->
+                        <picture>
+                            <!-- If you add an optimized webp later, place its URL here as the first source -->
+                            <img src="https://raw.githubusercontent.com/MurtazaaaAli/IT-Consultant/main/Murtaza-Pic.jpeg" alt="Murtaza Ali" class="profile-img rounded-2xl shadow-2xl" loading="lazy" decoding="async">
+                        </picture>
                         <div class="mt-4 p-3 rounded-xl bg-black/60 backdrop-blur border border-white/10 text-center">
                             <p class="text-base font-bold text-white">Murtaza Ali</p>
                             <p class="text-xs text-primary font-medium">Cybersecurity & IT Consultnat</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Me Section -->
-    <section id="about" class="py-20 border-t border-white/5 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-            <div class="text-center space-y-4">
-                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">About <span class="text-primary">Me</span></h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div class="lg:col-span-7 space-y-4 text-gray-300 text-base leading-relaxed">
-                    <p class="text-lg">
-                        I am an IT Consultant specializing in Cybersecurity, Compliance, Microsoft 365 Administration, Cloud Security, and IT Governance.
-                    </p>
-                    <p>
-                        With extensive experience supporting organizations across diverse industries, I help businesses strengthen their security posture, improve compliance readiness, optimize M[...]
-                    </p>
-                    <p>
-                        My approach combines technical expertise, security-first thinking, governance knowledge, and practical implementation strategies to help organizations build secure, scalab[...]
-                    </p>
-                </div>
-
-                <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div class="glass-card p-4 rounded-xl border border-white/10 flex items-center gap-3">
-                        <i data-lucide="shield-check" class="text-primary w-6 h-6 shrink-0"></i>
-                        <span class="text-sm font-semibold">Cybersecurity & Risk Management</span>
-                    </div>
-                    <div class="glass-card p-4 rounded-xl border border-white/10 flex items-center gap-3">
-                        <i data-lucide="cloud" class="text-primary w-6 h-6 shrink-0"></i>
-                        <span class="text-sm font-semibold">Microsoft 365 Administration</span>
-                    </div>
-                    <div class="glass-card p-4 rounded-xl border border-white/10 flex items-center gap-3">
-                        <i data-lucide="file-check" class="text-primary w-6 h-6 shrink-0"></i>
-                        <span class="text-sm font-semibold">Compliance & Governance</span>
-                    </div>
-                    <div class="glass-card p-4 rounded-xl border border-white/10 flex items-center gap-3">
-                        <i data-lucide="server" class="text-primary w-6 h-6 shrink-0"></i>
-                        <span class="text-sm font-semibold">Cloud Security & Infrastructure</span>
-                    </div>
-                    <div class="glass-card p-4 rounded-xl border border-white/10 flex items-center gap-3">
-                        <i data-lucide="search" class="text-primary w-6 h-6 shrink-0"></i>
-                        <span class="text-sm font-semibold">Security Assessments & Reviews</span>
-                    </div>
-                    <div class="glass-card p-4 rounded-xl border border-white/10 flex items-center gap-3">
-                        <i data-lucide="briefcase" class="text-primary w-6 h-6 shrink-0"></i>
-                        <span class="text-sm font-semibold">IT Consulting & Managed Services</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pt-8 border-t border-white/10">
-                <h3 class="text-center text-gray-400 font-semibold uppercase tracking-widest text-xs mb-6">Verified Industry Certifications</h3>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <div class="glass p-5 rounded-2xl text-center border-l-4 border-l-secondary hover:border-primary transition">
-                        <p class="font-bold text-white text-base">Microsoft Azure Administrator</p>
-                        <p class="text-xs text-primary font-mono mt-1">AZ-104</p>
-                    </div>
-                    <div class="glass p-5 rounded-2xl text-center border-l-4 border-l-secondary hover:border-primary transition">
-                        <p class="font-bold text-white text-base">Microsoft Security Operations</p>
-                        <p class="text-xs text-primary font-mono mt-1">MS-200 / Security</p>
-                    </div>
-                    <div class="glass p-5 rounded-2xl text-center border-l-4 border-l-accent hover:border-primary transition">
-                        <p class="font-bold text-white text-base">IBM IT Security</p>
-                        <p class="text-xs text-accent font-mono mt-1">Professional Certificate</p>
-                    </div>
-                    <div class="glass p-5 rounded-2xl text-center border-l-4 border-l-primary hover:border-primary transition">
-                        <p class="font-bold text-white text-base">Google System Administrator</p>
-                        <p class="text-xs text-primary font-mono mt-1">Professional Certificate</p>
                     </div>
                 </div>
             </div>
