@@ -779,39 +779,46 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Direct Email Inquiry Form -->
-                <div class="lg:col-span-7 glass p-8 rounded-3xl border border-white/10">
-                    <form action="mailto:murtazarehmat151@gmail.com" method="post" enctype="text/plain" class="space-y-4">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-semibold text-gray-300 uppercase mb-2">Name</label>
-                                <input type="text" name="Name" required placeholder="John Doe" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-primary transition">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-semibold text-gray-300 uppercase mb-2">Email</label>
-                                <input type="email" name="Email" required placeholder="john@company.com" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-primary transition">
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-semibold text-gray-300 uppercase mb-2">Phone</label>
-                                <input type="tel" name="Phone" placeholder="+123 456 789" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-primary transition">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-semibold text-gray-300 uppercase mb-2">Service Needed</label>
-                                <select name="Service" class="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-primary transition">
-                                    <option value="Cybersecurity">Cybersecurity Services</option>
-                                    <option value="Compliance">Compliance & Audit</option>
-                                    <option value="Microsoft 365">Microsoft 365 / Entra ID</option>
-                                    <option value="IT Outsourcing">IT Outsourcing</option>
-                                    <option value="IT Recruitment">IT Recruitment</option>
-                                    <option value="IT Helpdesk 24/7">IT Helpdesk 24/7</option>
-                                    <option value="Web Security">Web Security</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div>
+<!-- Direct Email Inquiry Form -->
+<div class="lg:col-span-7 glass p-8 rounded-3xl border border-white/10">
+    <form action="https://formspree.io/f/xljepoej" method="POST" class="space-y-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+                <label class="block text-xs font-semibold text-gray-300 uppercase mb-2">Name</label>
+                <input type="text" name="name" required placeholder="John Doe" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-primary transition">
+            </div>
+            <div>
+                <label class="block text-xs font-semibold text-gray-300 uppercase mb-2">Email</label>
+                <input type="email" name="email" required placeholder="john@company.com" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-primary transition">
+            </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+                <label class="block text-xs font-semibold text-gray-300 uppercase mb-2">Phone</label>
+                <input type="tel" name="phone" placeholder="+123 456 789" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-primary transition">
+            </div>
+            <div>
+                <label class="block text-xs font-semibold text-gray-300 uppercase mb-2">Service Needed</label>
+                <select name="service" class="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-primary transition">
+                    <option value="Cybersecurity">Cybersecurity Services</option>
+                    <option value="Compliance">Compliance & Audit</option>
+                    <option value="Microsoft 365">Microsoft 365 / Entra ID</option>
+                    <option value="IT Outsourcing">IT Outsourcing</option>
+                    <option value="IT Recruitment">IT Recruitment</option>
+                    <option value="IT Helpdesk 24/7">IT Helpdesk 24/7</option>
+                    <option value="Web Security">Web Security</option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <label class="block text-xs font-semibold text-gray-300 uppercase mb-2">Message</label>
+            <textarea name="message" rows="4" required placeholder="Describe your inquiry..." class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-primary transition"></textarea>
+        </div>
+        <button type="submit" class="w-full py-4 rounded-xl font-bold bg-primary text-bgDark hover:bg-cyan-300 transition shadow-xl shadow-primary/20">
+            Submit Inquiry
+        </button>
+    </form>
+</div>
                             <label class="block text-xs font-semibold text-gray-300 uppercase mb-2">Message</label>
                             <textarea name="Message" rows="4" required placeholder="Describe your inquiry..." class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-primary transition"></textarea>
                         </div>
