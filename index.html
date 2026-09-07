@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Murtaza Ali - Cybersecurity Consultant | Microsoft 365 Specialist</title>
+    <title>Murtaza Ali - Cybersecurity & IT Consultant</title>
     <meta name="description" content="Cybersecurity Consultant, Microsoft 365 Specialist, Compliance Professional, and IT Consultant helping organizations secure and optimize IT environments.">
 
     <!-- Tailwind CSS CDN -->
@@ -13,7 +13,8 @@
             theme: {
                 extend: {
                     colors: {
-                        bgDark: '#050816',
+                        bgDark: '#030712',
+                        cardDark: '#0B132B',
                         primary: '#00D4FF',
                         secondary: '#0078D4',
                         accent: '#7B61FF',
@@ -28,42 +29,39 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
-        /* Custom Glassmorphism & Neon Glow Effects */
+        /* Glassmorphism & Neon Effects */
         .glass {
-            background: rgba(15, 23, 42, 0.65);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(11, 19, 43, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 212, 255, 0.15);
         }
         .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         .glass-card:hover {
-            border-color: rgba(0, 212, 255, 0.4);
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
-            transform: translateY(-4px);
+            border-color: rgba(0, 212, 255, 0.5);
+            box-shadow: 0 0 25px rgba(0, 212, 255, 0.25);
+            transform: translateY(-6px) scale(1.01);
         }
         .neon-border {
-            box-shadow: 0 0 15px rgba(0, 212, 255, 0.4), inset 0 0 15px rgba(0, 212, 255, 0.2);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3), inset 0 0 15px rgba(0, 212, 255, 0.15);
             border: 2px solid #00D4FF;
         }
-        .neon-text-blue {
-            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
-        }
-        
-        /* Floating Animation */
+
+        /* Floating Animations */
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-12px); }
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(1deg); }
         }
         .animate-float {
-            animation: float 4s ease-in-out infinite;
+            animation: float 5s ease-in-out infinite;
         }
 
-        /* Marquee Animation */
+        /* Continuous Infinite Running Banner */
         @keyframes marquee {
             0% { transform: translateX(0%); }
             100% { transform: translateX(-50%); }
@@ -71,13 +69,13 @@
         .animate-marquee {
             display: flex;
             width: 200%;
-            animation: marquee 25s linear infinite;
+            animation: marquee 30s linear infinite;
         }
         .animate-marquee:hover {
             animation-play-state: paused;
         }
 
-        /* Particle Canvas Styling */
+        /* Canvas Particle Background */
         #particles-canvas {
             position: fixed;
             top: 0;
@@ -91,14 +89,14 @@
 </head>
 <body class="bg-bgDark text-white font-sans antialiased selection:bg-primary selection:text-bgDark relative overflow-x-hidden">
 
-    <!-- Interactive Background Particles Canvas -->
+    <!-- Interactive Particle Background -->
     <canvas id="particles-canvas"></canvas>
 
     <!-- Navigation Header -->
     <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <a href="#home" class="text-xl font-bold tracking-wider text-white">
+                <a href="#home" class="text-2xl font-black tracking-wider text-white">
                     MURTAZA<span class="text-primary">.ALI</span>
                 </a>
                 <nav class="hidden md:flex space-x-6 text-sm font-medium">
@@ -107,45 +105,46 @@
                     <a href="#why-me" class="hover:text-primary transition">Why Work With Me</a>
                     <a href="#case-studies" class="hover:text-primary transition">Case Studies</a>
                     <a href="#companies" class="hover:text-primary transition">Companies</a>
+                    <a href="#impact" class="hover:text-primary transition">Impact</a>
                     <a href="#tech-stack" class="hover:text-primary transition">Tech Stack</a>
                     <a href="#contact" class="hover:text-primary transition">Contact</a>
                 </nav>
                 <div class="hidden md:block">
-                    <a href="#consultation" class="px-5 py-2.5 rounded-full font-semibold text-sm bg-gradient-to-r from-secondary to-primary text-white hover:opacity-90 transition shadow-lg shadow-secondary/30">
+                    <a href="#consultation" class="px-5 py-2.5 rounded-full font-semibold text-sm bg-gradient-to-r from-secondary via-primary to-accent text-white hover:opacity-90 transition shadow-lg shadow-primary/20">
                         Book Consultation
                     </a>
                 </div>
-                <!-- Mobile Menu Button -->
                 <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
+                    <i data-lucide="menu" class="w-7 h-7"></i>
                 </button>
             </div>
         </div>
-        <!-- Mobile Navigation Menu -->
+        <!-- Mobile Dropdown -->
         <div id="mobile-menu" class="hidden md:hidden glass border-b border-white/10 px-4 pt-2 pb-6 space-y-3">
             <a href="#about" class="block text-gray-300 hover:text-primary">About</a>
             <a href="#services" class="block text-gray-300 hover:text-primary">Services</a>
             <a href="#why-me" class="block text-gray-300 hover:text-primary">Why Work With Me</a>
             <a href="#case-studies" class="block text-gray-300 hover:text-primary">Case Studies</a>
             <a href="#companies" class="block text-gray-300 hover:text-primary">Companies</a>
+            <a href="#impact" class="block text-gray-300 hover:text-primary">Impact</a>
             <a href="#tech-stack" class="block text-gray-300 hover:text-primary">Tech Stack</a>
             <a href="#contact" class="block text-gray-300 hover:text-primary">Contact</a>
-            <a href="#consultation" class="inline-block mt-2 px-5 py-2 rounded-full font-semibold text-sm bg-gradient-to-r from-secondary to-primary text-white">Book Consultation</a>
+            <a href="#consultation" class="inline-block mt-2 px-5 py-2 rounded-full font-semibold text-sm bg-primary text-bgDark">Book Consultation</a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center pt-24 pb-12 relative overflow-hidden">
+    <section id="home" class="min-h-screen flex items-center pt-28 pb-16 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <!-- Left Hero Content -->
+            
             <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-semibold uppercase tracking-widest">
-                    <span class="w-2 h-2 rounded-full bg-primary animate-ping"></span> Available for Consulting
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/40 bg-primary/10 text-primary text-xs font-semibold uppercase tracking-widest shadow-inner">
+                    <span class="w-2.5 h-2.5 rounded-full bg-primary animate-ping"></span> Available for Global Consulting
                 </div>
-                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight">
+                <h1 class="text-5xl sm:text-7xl font-black tracking-tight leading-tight">
                     Murtaza Ali
                 </h1>
-                <h2 class="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent">
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-300 to-accent">
                     Cybersecurity Consultant
                 </h2>
                 <h3 class="text-lg sm:text-xl text-gray-300 font-medium">
@@ -155,27 +154,24 @@
                     Helping organizations secure, optimize, and transform their IT operations through cybersecurity, compliance, Microsoft technologies, and modern cloud solutions.
                 </p>
                 <div class="flex flex-wrap gap-4 justify-center lg:justify-start pt-4">
-                    <a href="#consultation" class="px-6 py-3 rounded-lg font-semibold bg-primary text-bgDark hover:bg-cyan-300 transition shadow-lg shadow-primary/20 flex items-center gap-2">
-                        <i data-lucide="calendar" class="w-4 h-4"></i> Book Consultation
+                    <a href="#consultation" class="px-8 py-4 rounded-xl font-bold bg-primary text-bgDark hover:bg-cyan-300 transition shadow-xl shadow-primary/30 flex items-center gap-2">
+                        <i data-lucide="calendar" class="w-5 h-5"></i> Book Consultation
                     </a>
-                    <a href="#" class="px-6 py-3 rounded-lg font-semibold glass border border-white/20 hover:border-primary/50 text-white transition flex items-center gap-2">
-                        <i data-lucide="download" class="w-4 h-4"></i> Download Resume
-                    </a>
-                    <a href="#contact" class="px-6 py-3 rounded-lg font-semibold glass border border-white/10 hover:border-secondary text-gray-300 hover:text-white transition flex items-center gap-2">
-                        <i data-lucide="mail" class="w-4 h-4"></i> Contact Me
+                    <a href="#contact" class="px-8 py-4 rounded-xl font-bold glass border border-white/20 hover:border-primary text-white transition flex items-center gap-2">
+                        <i data-lucide="mail" class="w-5 h-5"></i> Contact Me
                     </a>
                 </div>
             </div>
 
-            <!-- Right Hero Image -->
+            <!-- Profile Picture -->
             <div class="lg:col-span-5 flex justify-center">
                 <div class="relative animate-float">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-2xl blur-lg opacity-40"></div>
-                    <div class="relative glass rounded-2xl p-4 neon-border max-w-sm w-full">
-                        <img src="https://via.placeholder.com/400x450/0f172a/00D4FF?text=Murtaza+Ali+Photo" alt="Murtaza Ali" class="rounded-xl w-full object-cover shadow-2xl">
-                        <div class="mt-4 p-3 rounded-lg bg-black/40 backdrop-blur border border-white/10 text-center">
-                            <p class="text-sm font-semibold text-white">Murtaza Ali</p>
-                            <p class="text-xs text-primary">Cybersecurity & M365 Specialist</p>
+                    <div class="absolute -inset-1 bg-gradient-to-r from-primary via-secondary to-accent rounded-3xl blur-xl opacity-50"></div>
+                    <div class="relative glass rounded-3xl p-4 neon-border max-w-sm w-full overflow-hidden">
+                        <img src="https://i.ibb.co/L8xJ62Z/murtaza-ali.png" alt="Murtaza Ali" class="rounded-2xl w-full object-cover shadow-2xl transition hover:scale-105 duration-500">
+                        <div class="mt-4 p-3 rounded-xl bg-black/60 backdrop-blur border border-white/10 text-center">
+                            <p class="text-base font-bold text-white">Murtaza Ali</p>
+                            <p class="text-xs text-primary font-medium">Cybersecurity & M365 Specialist</p>
                         </div>
                     </div>
                 </div>
@@ -184,16 +180,16 @@
     </section>
 
     <!-- About Me Section -->
-    <section id="about" class="py-20 relative border-t border-white/5">
+    <section id="about" class="py-20 border-t border-white/5 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             <div class="text-center space-y-4">
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">About <span class="text-primary">Me</span></h2>
-                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">About <span class="text-primary">Me</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div class="lg:col-span-7 space-y-4 text-gray-300 text-base leading-relaxed">
-                    <p>
+                    <p class="text-lg">
                         I am an IT Consultant specializing in Cybersecurity, Compliance, Microsoft 365 Administration, Cloud Security, and IT Governance.
                     </p>
                     <p>
@@ -204,7 +200,6 @@
                     </p>
                 </div>
 
-                <!-- Expertise Cards Grid -->
                 <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div class="glass-card p-4 rounded-xl border border-white/10 flex items-center gap-3">
                         <i data-lucide="shield-check" class="text-primary w-6 h-6 shrink-0"></i>
@@ -233,24 +228,23 @@
                 </div>
             </div>
 
-            <!-- Integrated Credentials Highlight -->
             <div class="pt-8 border-t border-white/10">
-                <h3 class="text-lg font-semibold text-center text-gray-300 mb-6">Verified Professional Certifications</h3>
+                <h3 class="text-center text-gray-400 font-semibold uppercase tracking-widest text-xs mb-6">Verified Industry Certifications</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <div class="glass p-4 rounded-xl text-center border-l-4 border-l-secondary hover:border-primary transition">
-                        <p class="font-bold text-white text-sm">Microsoft Azure Administrator</p>
+                    <div class="glass p-5 rounded-2xl text-center border-l-4 border-l-secondary hover:border-primary transition">
+                        <p class="font-bold text-white text-base">Microsoft Azure Administrator</p>
                         <p class="text-xs text-primary font-mono mt-1">AZ-104</p>
                     </div>
-                    <div class="glass p-4 rounded-xl text-center border-l-4 border-l-secondary hover:border-primary transition">
-                        <p class="font-bold text-white text-sm">Microsoft Security Operations</p>
+                    <div class="glass p-5 rounded-2xl text-center border-l-4 border-l-secondary hover:border-primary transition">
+                        <p class="font-bold text-white text-base">Microsoft Security Operations</p>
                         <p class="text-xs text-primary font-mono mt-1">MS-200 / Security</p>
                     </div>
-                    <div class="glass p-4 rounded-xl text-center border-l-4 border-l-accent hover:border-primary transition">
-                        <p class="font-bold text-white text-sm">IBM IT Security</p>
+                    <div class="glass p-5 rounded-2xl text-center border-l-4 border-l-accent hover:border-primary transition">
+                        <p class="font-bold text-white text-base">IBM IT Security</p>
                         <p class="text-xs text-accent font-mono mt-1">Professional Certificate</p>
                     </div>
-                    <div class="glass p-4 rounded-xl text-center border-l-4 border-l-primary hover:border-primary transition">
-                        <p class="font-bold text-white text-sm">Google System Administrator</p>
+                    <div class="glass p-5 rounded-2xl text-center border-l-4 border-l-primary hover:border-primary transition">
+                        <p class="font-bold text-white text-base">Google System Administrator</p>
                         <p class="text-xs text-primary font-mono mt-1">Professional Certificate</p>
                     </div>
                 </div>
@@ -258,18 +252,18 @@
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Core & Expanded Services Section -->
     <section id="services" class="py-20 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             <div class="text-center space-y-4">
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Core <span class="text-primary">Services</span></h2>
-                <p class="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">Comprehensive cybersecurity, cloud, and governance solutions tailored to your business needs.</p>
-                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">Core <span class="text-primary">Services</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">End-to-end IT, security, staffing, and compliance solutions customized for modern enterprises.</p>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Service 1 -->
-                <div class="glass-card p-6 rounded-2xl border border-white/10 flex flex-col justify-between">
+                <!-- Cybersecurity -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between">
                     <div>
                         <div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center text-primary mb-4">
                             <i data-lucide="shield" class="w-6 h-6"></i>
@@ -280,14 +274,13 @@
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-primary"></i> Vulnerability Management</li>
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-primary"></i> Security Reviews</li>
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-primary"></i> Risk Assessments</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-primary"></i> Security Monitoring</li>
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-primary"></i> Incident Response Planning</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Service 2 -->
-                <div class="glass-card p-6 rounded-2xl border border-white/10 flex flex-col justify-between">
+                <!-- Compliance -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between">
                     <div>
                         <div class="w-12 h-12 rounded-xl bg-accent/10 border border-accent/30 flex items-center justify-center text-accent mb-4">
                             <i data-lucide="file-text" class="w-6 h-6"></i>
@@ -299,13 +292,12 @@
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent"></i> Vendor Risk Assessments</li>
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent"></i> Governance Reviews</li>
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent"></i> Internal Controls Reviews</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent"></i> Compliance Gap Assessments</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Service 3 -->
-                <div class="glass-card p-6 rounded-2xl border border-white/10 flex flex-col justify-between">
+                <!-- M365 -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between">
                     <div>
                         <div class="w-12 h-12 rounded-xl bg-secondary/10 border border-secondary/30 flex items-center justify-center text-secondary mb-4">
                             <i data-lucide="layout" class="w-6 h-6"></i>
@@ -316,14 +308,13 @@
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-secondary"></i> SharePoint Online</li>
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-secondary"></i> Entra ID & Intune</li>
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-secondary"></i> Microsoft Defender</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-secondary"></i> Identity Management</li>
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-secondary"></i> Conditional Access</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Service 4 -->
-                <div class="glass-card p-6 rounded-2xl border border-white/10 flex flex-col justify-between">
+                <!-- Cloud Consulting -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between">
                     <div>
                         <div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center text-primary mb-4">
                             <i data-lucide="cpu" class="w-6 h-6"></i>
@@ -333,9 +324,72 @@
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-primary"></i> Azure Cloud Solutions</li>
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-primary"></i> Infrastructure Security</li>
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-primary"></i> Cloud Governance</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-primary"></i> Cloud Assessments</li>
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-primary"></i> Technology Roadmaps</li>
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-primary"></i> IT Strategy Consulting</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- IT Outsourcing -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-accent/10 border border-accent/30 flex items-center justify-center text-accent mb-4">
+                            <i data-lucide="globe-2" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">IT Outsourcing</h3>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent"></i> Managed Infrastructure</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent"></i> Dedicated IT Engineers</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent"></i> System Operations</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent"></i> Cost Optimization</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- IT Recruitment -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-secondary/10 border border-secondary/30 flex items-center justify-center text-secondary mb-4">
+                            <i data-lucide="users" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">IT Recruitment</h3>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-secondary"></i> Cybersecurity Talent Sourcing</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-secondary"></i> Technical Vetting</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-secondary"></i> Cloud Engineers Staffing</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-secondary"></i> Executive Tech Hiring</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- IT Helpdesk 24/7 -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center text-primary mb-4">
+                            <i data-lucide="headphones" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">IT Helpdesk 24/7</h3>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-primary"></i> Round-the-clock Support</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-primary"></i> Remote Troubleshooting</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-primary"></i> User Onboarding & Offboarding</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-primary"></i> Incident Escalation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Web Management & Security -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-accent/10 border border-accent/30 flex items-center justify-center text-accent mb-4">
+                            <i data-lucide="code-2" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">Web Management & Security</h3>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent"></i> WAF & DDoS Protection</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent"></i> WordPress Hardening</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent"></i> Performance Optimization</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent"></i> SSL & Domain Security</li>
                         </ul>
                     </div>
                 </div>
@@ -347,317 +401,424 @@
     <section id="why-me" class="py-20 border-t border-white/5 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
             <div class="text-center space-y-4">
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Why Work <span class="text-primary">With Me</span></h2>
-                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">Why Work <span class="text-primary">With Me</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
             </div>
 
-            <!-- Animated Counters -->
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="glass p-6 rounded-2xl text-center border border-white/10">
-                    <p class="text-4xl sm:text-5xl font-black text-primary font-mono counter" data-target="6">0</p>
-                    <p class="text-gray-400 text-sm font-medium mt-2">Years Experience</p>
+                <div class="glass p-8 rounded-3xl text-center border border-primary/20 hover:border-primary transition">
+                    <p class="text-5xl font-black text-primary font-mono counter" data-target="6">0</p>
+                    <p class="text-gray-300 text-sm font-semibold mt-2">Years Experience</p>
                 </div>
-                <div class="glass p-6 rounded-2xl text-center border border-white/10">
-                    <p class="text-4xl sm:text-5xl font-black text-primary font-mono counter" data-target="100">0</p>
-                    <p class="text-gray-400 text-sm font-medium mt-2">Security Reviews</p>
+                <div class="glass p-8 rounded-3xl text-center border border-primary/20 hover:border-primary transition">
+                    <p class="text-5xl font-black text-primary font-mono counter" data-target="100">0</p>
+                    <p class="text-gray-300 text-sm font-semibold mt-2">Security Reviews</p>
                 </div>
-                <div class="glass p-6 rounded-2xl text-center border border-white/10">
-                    <p class="text-4xl sm:text-5xl font-black text-primary font-mono counter" data-target="50">0</p>
-                    <p class="text-gray-400 text-sm font-medium mt-2">Security Controls Implemented</p>
+                <div class="glass p-8 rounded-3xl text-center border border-primary/20 hover:border-primary transition">
+                    <p class="text-5xl font-black text-primary font-mono counter" data-target="50">0</p>
+                    <p class="text-gray-300 text-sm font-semibold mt-2">Controls Implemented</p>
                 </div>
-                <div class="glass p-6 rounded-2xl text-center border border-white/10 flex flex-col items-center justify-center">
-                    <p class="text-2xl sm:text-3xl font-black text-accent">Multi-Industry</p>
-                    <p class="text-gray-400 text-sm font-medium mt-2">Global Experience</p>
+                <div class="glass p-8 rounded-3xl text-center border border-accent/30 hover:border-accent transition flex flex-col items-center justify-center">
+                    <p class="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Multi-Industry</p>
+                    <p class="text-gray-300 text-sm font-semibold mt-2">Global Experience</p>
                 </div>
             </div>
 
-            <!-- Reasons Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="glass p-6 rounded-xl space-y-3">
+                <div class="glass p-6 rounded-2xl space-y-3 hover:border-primary transition">
                     <h3 class="text-lg font-bold text-white flex items-center gap-2"><i data-lucide="award" class="text-primary"></i> Microsoft-Certified Expertise</h3>
-                    <p class="text-gray-400 text-sm">Backed by Microsoft technical certifications and practical experience implementing and securing Microsoft technologies.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Backed by Microsoft technical certifications and practical experience implementing and securing Microsoft technologies.</p>
                 </div>
-                <div class="glass p-6 rounded-xl space-y-3">
-                    <h3 class="text-lg font-bold text-white flex items-center gap-2"><i data-lucide="lock" class="text-primary"></i> Security-First Approach</h3>
-                    <p class="text-gray-400 text-sm">Every recommendation is designed with security, governance, and risk reduction in mind.</p>
+                <div class="glass p-6 rounded-2xl space-y-3 hover:border-primary transition">
+                    <h3 class="text-lg font-bold text-white flex items-center gap-2"><i data-lucide="shield-alert" class="text-primary"></i> Security-First Approach</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Every recommendation is designed with security, governance, and risk reduction in mind.</p>
                 </div>
-                <div class="glass p-6 rounded-xl space-y-3">
-                    <h3 class="text-lg font-bold text-white flex items-center gap-2"><i data-lucide="sliders" class="text-primary"></i> Best Practice Driven</h3>
-                    <p class="text-gray-400 text-sm">Focused on industry standards, governance frameworks, and operational excellence.</p>
+                <div class="glass p-6 rounded-2xl space-y-3 hover:border-primary transition">
+                    <h3 class="text-lg font-bold text-white flex items-center gap-2"><i data-lucide="check-circle" class="text-primary"></i> Best Practice Driven</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Focused on industry standards, governance frameworks, and operational excellence.</p>
                 </div>
-                <div class="glass p-6 rounded-xl space-y-3">
+                <div class="glass p-6 rounded-2xl space-y-3 hover:border-primary transition">
                     <h3 class="text-lg font-bold text-white flex items-center gap-2"><i data-lucide="trending-up" class="text-primary"></i> Business-Focused Consulting</h3>
-                    <p class="text-gray-400 text-sm">Solutions aligned with business goals and measurable outcomes.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Solutions aligned directly with business goals and measurable ROI outcomes.</p>
                 </div>
-                <div class="glass p-6 rounded-xl space-y-3">
+                <div class="glass p-6 rounded-2xl space-y-3 hover:border-primary transition">
                     <h3 class="text-lg font-bold text-white flex items-center gap-2"><i data-lucide="globe" class="text-primary"></i> Cross-Industry Experience</h3>
-                    <p class="text-gray-400 text-sm">Experience across technology, consulting, managed services, professional services, and business environments.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Experience across technology, consulting, managed services, professional services, and business environments.</p>
                 </div>
-                <div class="glass p-6 rounded-xl space-y-3">
+                <div class="glass p-6 rounded-2xl space-y-3 hover:border-primary transition">
                     <h3 class="text-lg font-bold text-white flex items-center gap-2"><i data-lucide="layers" class="text-primary"></i> End-to-End Expertise</h3>
-                    <p class="text-gray-400 text-sm">Cybersecurity, compliance, Microsoft technologies, cloud security, and IT consulting under one professional brand.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Cybersecurity, compliance, Microsoft technologies, cloud security, and IT consulting under one professional brand.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Case Studies Section -->
-    <section id="case-studies" class="py-20 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-            <div class="text-center space-y-4">
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Case <span class="text-primary">Studies</span></h2>
-                <p class="text-gray-400 text-sm sm:text-base">Real-world impact across cybersecurity, cloud, and compliance.</p>
-                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
-            </div>
+    <!-- Infinite Running Banner Case Studies -->
+    <section id="case-studies" class="py-20 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 text-center mb-10">
+            <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">Case <span class="text-primary">Studies</span></h2>
+            <p class="text-gray-400 text-sm sm:text-base">Real-world impact across cybersecurity, cloud, helpdesk, outsourcing, and compliance. Hover to freeze.</p>
+            <div class="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
+        </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="relative w-full overflow-hidden">
+            <div class="animate-marquee flex gap-6">
                 <!-- Case Study 1 -->
-                <div class="glass-card p-6 rounded-2xl border border-white/10 space-y-4 flex flex-col justify-between">
+                <div class="w-[380px] shrink-0 glass p-6 rounded-2xl space-y-4 flex flex-col justify-between border border-white/10">
                     <div>
-                        <span class="text-xs font-mono text-primary px-2 py-1 rounded bg-primary/10 border border-primary/30">Microsoft 365</span>
-                        <h3 class="text-xl font-bold text-white mt-3">Microsoft 365 Security Enhancement</h3>
-                        <div class="mt-4 space-y-2 text-sm">
-                            <p class="text-gray-300"><strong class="text-white">Challenge:</strong> Improve identity, endpoint, and email security.</p>
-                            <p class="text-gray-300"><strong class="text-white">Solution:</strong> Implemented Microsoft security controls and best practices.</p>
-                        </div>
+                        <span class="text-xs font-mono text-primary px-3 py-1 rounded-full bg-primary/10 border border-primary/30">Microsoft 365</span>
+                        <h3 class="text-lg font-bold text-white mt-3">Microsoft 365 Security Enhancement</h3>
+                        <p class="text-xs text-gray-300 mt-2"><strong class="text-white">Challenge:</strong> Improve identity, endpoint, and email security.</p>
+                        <p class="text-xs text-gray-300 mt-1"><strong class="text-white">Solution:</strong> Implemented Defender & Conditional Access rules.</p>
                     </div>
-                    <div class="pt-4 border-t border-white/10">
-                        <p class="text-sm font-semibold text-primary"><i data-lucide="check-circle-2" class="inline w-4 h-4 mr-1"></i> Outcome: Improved security posture & reduced risk.</p>
-                    </div>
+                    <p class="text-xs font-semibold text-primary"><i data-lucide="check-circle-2" class="inline w-4 h-4 mr-1"></i> Reduced identity threat exposure by 90%.</p>
                 </div>
 
                 <!-- Case Study 2 -->
-                <div class="glass-card p-6 rounded-2xl border border-white/10 space-y-4 flex flex-col justify-between">
+                <div class="w-[380px] shrink-0 glass p-6 rounded-2xl space-y-4 flex flex-col justify-between border border-white/10">
                     <div>
-                        <span class="text-xs font-mono text-accent px-2 py-1 rounded bg-accent/10 border border-accent/30">Cloud Security</span>
-                        <h3 class="text-xl font-bold text-white mt-3">Cloud Security Assessment</h3>
-                        <div class="mt-4 space-y-2 text-sm">
-                            <p class="text-gray-300"><strong class="text-white">Challenge:</strong> Identify cloud security gaps and governance risks.</p>
-                            <p class="text-gray-300"><strong class="text-white">Solution:</strong> Conducted comprehensive security reviews and remediation planning.</p>
-                        </div>
+                        <span class="text-xs font-mono text-accent px-3 py-1 rounded-full bg-accent/10 border border-accent/30">Cloud Security</span>
+                        <h3 class="text-lg font-bold text-white mt-3">Cloud Security Assessment</h3>
+                        <p class="text-xs text-gray-300 mt-2"><strong class="text-white">Challenge:</strong> Identify cloud security gaps and governance risks.</p>
+                        <p class="text-xs text-gray-300 mt-1"><strong class="text-white">Solution:</strong> Conducted comprehensive Azure vulnerability reviews.</p>
                     </div>
-                    <div class="pt-4 border-t border-white/10">
-                        <p class="text-sm font-semibold text-accent"><i data-lucide="check-circle-2" class="inline w-4 h-4 mr-1"></i> Outcome: Strengthened cloud controls & governance maturity.</p>
-                    </div>
+                    <p class="text-xs font-semibold text-accent"><i data-lucide="check-circle-2" class="inline w-4 h-4 mr-1"></i> Strengthened cloud governance maturity.</p>
                 </div>
 
                 <!-- Case Study 3 -->
-                <div class="glass-card p-6 rounded-2xl border border-white/10 space-y-4 flex flex-col justify-between">
+                <div class="w-[380px] shrink-0 glass p-6 rounded-2xl space-y-4 flex flex-col justify-between border border-white/10">
                     <div>
-                        <span class="text-xs font-mono text-secondary px-2 py-1 rounded bg-secondary/10 border border-secondary/30">Compliance</span>
-                        <h3 class="text-xl font-bold text-white mt-3">Compliance Readiness Program</h3>
-                        <div class="mt-4 space-y-2 text-sm">
-                            <p class="text-gray-300"><strong class="text-white">Challenge:</strong> Improve audit readiness and control effectiveness.</p>
-                            <p class="text-gray-300"><strong class="text-white">Solution:</strong> Performed governance and compliance assessments.</p>
-                        </div>
+                        <span class="text-xs font-mono text-secondary px-3 py-1 rounded-full bg-secondary/10 border border-secondary/30">Compliance</span>
+                        <h3 class="text-lg font-bold text-white mt-3">Compliance Readiness Program</h3>
+                        <p class="text-xs text-gray-300 mt-2"><strong class="text-white">Challenge:</strong> Improve audit readiness and control effectiveness.</p>
+                        <p class="text-xs text-gray-300 mt-1"><strong class="text-white">Solution:</strong> SOC 2 and HIPAA framework gap remediation.</p>
                     </div>
-                    <div class="pt-4 border-t border-white/10">
-                        <p class="text-sm font-semibold text-secondary"><i data-lucide="check-circle-2" class="inline w-4 h-4 mr-1"></i> Outcome: Enhanced compliance readiness & security maturity.</p>
+                    <p class="text-xs font-semibold text-secondary"><i data-lucide="check-circle-2" class="inline w-4 h-4 mr-1"></i> Successfully achieved full audit readiness.</p>
+                </div>
+
+                <!-- Case Study 4 -->
+                <div class="w-[380px] shrink-0 glass p-6 rounded-2xl space-y-4 flex flex-col justify-between border border-white/10">
+                    <div>
+                        <span class="text-xs font-mono text-primary px-3 py-1 rounded-full bg-primary/10 border border-primary/30">IT Helpdesk 24/7</span>
+                        <h3 class="text-lg font-bold text-white mt-3">Enterprise 24/7 Support Setup</h3>
+                        <p class="text-xs text-gray-300 mt-2"><strong class="text-white">Challenge:</strong> High ticket resolution time across global teams.</p>
+                        <p class="text-xs text-gray-300 mt-1"><strong class="text-white">Solution:</strong> Deployed round-the-clock tiered IT helpdesk.</p>
                     </div>
+                    <p class="text-xs font-semibold text-primary"><i data-lucide="check-circle-2" class="inline w-4 h-4 mr-1"></i> Ticket response time slashed under 15 mins.</p>
+                </div>
+
+                <!-- Case Study 5 -->
+                <div class="w-[380px] shrink-0 glass p-6 rounded-2xl space-y-4 flex flex-col justify-between border border-white/10">
+                    <div>
+                        <span class="text-xs font-mono text-accent px-3 py-1 rounded-full bg-accent/10 border border-accent/30">Web Security</span>
+                        <h3 class="text-lg font-bold text-white mt-3">WAF & DDoS Mitigation</h3>
+                        <p class="text-xs text-gray-300 mt-2"><strong class="text-white">Challenge:</strong> Frequent web attacks & performance bottlenecks.</p>
+                        <p class="text-xs text-gray-300 mt-1"><strong class="text-white">Solution:</strong> Cloudflare Enterprise & hardening implemented.</p>
+                    </div>
+                    <p class="text-xs font-semibold text-accent"><i data-lucide="check-circle-2" class="inline w-4 h-4 mr-1"></i> Zero downtime & 40% faster site speed.</p>
+                </div>
+
+                <!-- Duplicate Loop Cards -->
+                <div class="w-[380px] shrink-0 glass p-6 rounded-2xl space-y-4 flex flex-col justify-between border border-white/10">
+                    <div>
+                        <span class="text-xs font-mono text-primary px-3 py-1 rounded-full bg-primary/10 border border-primary/30">Microsoft 365</span>
+                        <h3 class="text-lg font-bold text-white mt-3">Microsoft 365 Security Enhancement</h3>
+                        <p class="text-xs text-gray-300 mt-2"><strong class="text-white">Challenge:</strong> Improve identity, endpoint, and email security.</p>
+                        <p class="text-xs text-gray-300 mt-1"><strong class="text-white">Solution:</strong> Implemented Defender & Conditional Access rules.</p>
+                    </div>
+                    <p class="text-xs font-semibold text-primary"><i data-lucide="check-circle-2" class="inline w-4 h-4 mr-1"></i> Reduced identity threat exposure by 90%.</p>
+                </div>
+                <div class="w-[380px] shrink-0 glass p-6 rounded-2xl space-y-4 flex flex-col justify-between border border-white/10">
+                    <div>
+                        <span class="text-xs font-mono text-accent px-3 py-1 rounded-full bg-accent/10 border border-accent/30">Cloud Security</span>
+                        <h3 class="text-lg font-bold text-white mt-3">Cloud Security Assessment</h3>
+                        <p class="text-xs text-gray-300 mt-2"><strong class="text-white">Challenge:</strong> Identify cloud security gaps and governance risks.</p>
+                        <p class="text-xs text-gray-300 mt-1"><strong class="text-white">Solution:</strong> Conducted comprehensive Azure vulnerability reviews.</p>
+                    </div>
+                    <p class="text-xs font-semibold text-accent"><i data-lucide="check-circle-2" class="inline w-4 h-4 mr-1"></i> Strengthened cloud governance maturity.</p>
+                </div>
+                <div class="w-[380px] shrink-0 glass p-6 rounded-2xl space-y-4 flex flex-col justify-between border border-white/10">
+                    <div>
+                        <span class="text-xs font-mono text-secondary px-3 py-1 rounded-full bg-secondary/10 border border-secondary/30">Compliance</span>
+                        <h3 class="text-lg font-bold text-white mt-3">Compliance Readiness Program</h3>
+                        <p class="text-xs text-gray-300 mt-2"><strong class="text-white">Challenge:</strong> Improve audit readiness and control effectiveness.</p>
+                        <p class="text-xs text-gray-300 mt-1"><strong class="text-white">Solution:</strong> SOC 2 and HIPAA framework gap remediation.</p>
+                    </div>
+                    <p class="text-xs font-semibold text-secondary"><i data-lucide="check-circle-2" class="inline w-4 h-4 mr-1"></i> Successfully achieved full audit readiness.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Companies Marquee Section -->
-    <section id="companies" class="py-16 bg-black/30 overflow-hidden border-y border-white/5">
+    <!-- Companies Marquee -->
+    <section id="companies" class="py-16 bg-black/40 overflow-hidden border-y border-white/5">
         <div class="max-w-7xl mx-auto px-4 mb-8 text-center">
-            <h3 class="text-lg font-semibold text-gray-400 uppercase tracking-widest">Trusted Experience Across Industry Leaders</h3>
+            <h3 class="text-sm font-bold text-primary uppercase tracking-widest">Trusted Experience Across Industry Leaders</h3>
         </div>
         <div class="relative w-full overflow-hidden">
             <div class="animate-marquee flex items-center gap-12 whitespace-nowrap">
-                <!-- List 1 -->
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">ThinkTech Solutions Pvt Ltd</span>
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">•</span>
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">CrescenTech Systems</span>
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">•</span>
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">PFOC Pvt Ltd</span>
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">•</span>
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">LANOP Business & Tax Advisors</span>
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">•</span>
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">NextGen Technologies</span>
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">•</span>
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">Optimus Fox</span>
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">•</span>
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">DataRovers</span>
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">•</span>
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">IT Guiders</span>
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">•</span>
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">2B Vision Technologies</span>
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">•</span>
+                <span class="text-lg font-bold text-gray-300 hover:text-primary transition">ThinkTech Solutions Pvt Ltd</span>
+                <span class="text-primary">•</span>
+                <span class="text-lg font-bold text-gray-300 hover:text-primary transition">CrescenTech Systems</span>
+                <span class="text-primary">•</span>
+                <span class="text-lg font-bold text-gray-300 hover:text-primary transition">PFOC Pvt Ltd</span>
+                <span class="text-primary">•</span>
+                <span class="text-lg font-bold text-gray-300 hover:text-primary transition">LANOP Business & Tax Advisors</span>
+                <span class="text-primary">•</span>
+                <span class="text-lg font-bold text-gray-300 hover:text-primary transition">NextGen Technologies</span>
+                <span class="text-primary">•</span>
+                <span class="text-lg font-bold text-gray-300 hover:text-primary transition">Optimus Fox</span>
+                <span class="text-primary">•</span>
+                <span class="text-lg font-bold text-gray-300 hover:text-primary transition">DataRovers</span>
+                <span class="text-primary">•</span>
+                <span class="text-lg font-bold text-gray-300 hover:text-primary transition">IT Guiders</span>
+                <span class="text-primary">•</span>
+                <span class="text-lg font-bold text-gray-300 hover:text-primary transition">2B Vision Technologies</span>
+                <span class="text-primary">•</span>
 
-                <!-- Duplicate List for Seamless Infinite Loop -->
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">ThinkTech Solutions Pvt Ltd</span>
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">•</span>
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">CrescenTech Systems</span>
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">•</span>
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">PFOC Pvt Ltd</span>
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">•</span>
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">LANOP Business & Tax Advisors</span>
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">•</span>
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">NextGen Technologies</span>
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">•</span>
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">Optimus Fox</span>
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">•</span>
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">DataRovers</span>
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">•</span>
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">IT Guiders</span>
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">•</span>
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">2B Vision Technologies</span>
-                <span class="text-xl font-bold text-gray-400 hover:text-primary transition">•</span>
+                <!-- Repeat -->
+                <span class="text-lg font-bold text-gray-300 hover:text-primary transition">ThinkTech Solutions Pvt Ltd</span>
+                <span class="text-primary">•</span>
+                <span class="text-lg font-bold text-gray-300 hover:text-primary transition">CrescenTech Systems</span>
+                <span class="text-primary">•</span>
+                <span class="text-lg font-bold text-gray-300 hover:text-primary transition">PFOC Pvt Ltd</span>
+                <span class="text-primary">•</span>
+                <span class="text-lg font-bold text-gray-300 hover:text-primary transition">LANOP Business & Tax Advisors</span>
+                <span class="text-primary">•</span>
+                <span class="text-lg font-bold text-gray-300 hover:text-primary transition">NextGen Technologies</span>
+                <span class="text-primary">•</span>
             </div>
         </div>
     </section>
 
     <!-- Areas of Impact -->
-    <section class="py-20 relative">
+    <section id="impact" class="py-20 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             <div class="text-center space-y-4">
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Areas of <span class="text-primary">Impact</span></h2>
-                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">Areas of <span class="text-primary">Impact</span></h2>
+                <p class="text-gray-400 text-sm sm:text-base">Strategic domains where I deliver high-value technology and security transformations.</p>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
             </div>
 
-            <div class="flex flex-wrap justify-center gap-4">
-                <span class="glass px-5 py-3 rounded-xl border border-white/10 text-sm font-medium hover:border-primary transition">Cybersecurity Reviews</span>
-                <span class="glass px-5 py-3 rounded-xl border border-white/10 text-sm font-medium hover:border-primary transition">Security Governance</span>
-                <span class="glass px-5 py-3 rounded-xl border border-white/10 text-sm font-medium hover:border-primary transition">Risk Management</span>
-                <span class="glass px-5 py-3 rounded-xl border border-white/10 text-sm font-medium hover:border-primary transition">Cloud Security</span>
-                <span class="glass px-5 py-3 rounded-xl border border-white/10 text-sm font-medium hover:border-primary transition">Compliance Readiness</span>
-                <span class="glass px-5 py-3 rounded-xl border border-white/10 text-sm font-medium hover:border-primary transition">Microsoft 365 Security</span>
-                <span class="glass px-5 py-3 rounded-xl border border-white/10 text-sm font-medium hover:border-primary transition">Identity Management</span>
-                <span class="glass px-5 py-3 rounded-xl border border-white/10 text-sm font-medium hover:border-primary transition">Digital Transformation</span>
-                <span class="glass px-5 py-3 rounded-xl border border-white/10 text-sm font-medium hover:border-primary transition">Security Operations</span>
-                <span class="glass px-5 py-3 rounded-xl border border-white/10 text-sm font-medium hover:border-primary transition">Technology Consulting</span>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+                <div class="glass p-5 rounded-2xl text-center space-y-2 hover:border-primary transition group">
+                    <i data-lucide="shield-check" class="w-8 h-8 text-primary mx-auto group-hover:scale-110 transition"></i>
+                    <p class="font-bold text-white text-sm">Cybersecurity Reviews</p>
+                </div>
+                <div class="glass p-5 rounded-2xl text-center space-y-2 hover:border-primary transition group">
+                    <i data-lucide="file-badge" class="w-8 h-8 text-primary mx-auto group-hover:scale-110 transition"></i>
+                    <p class="font-bold text-white text-sm">Security Governance</p>
+                </div>
+                <div class="glass p-5 rounded-2xl text-center space-y-2 hover:border-primary transition group">
+                    <i data-lucide="alert-triangle" class="w-8 h-8 text-primary mx-auto group-hover:scale-110 transition"></i>
+                    <p class="font-bold text-white text-sm">Risk Management</p>
+                </div>
+                <div class="glass p-5 rounded-2xl text-center space-y-2 hover:border-primary transition group">
+                    <i data-lucide="cloud-lightning" class="w-8 h-8 text-primary mx-auto group-hover:scale-110 transition"></i>
+                    <p class="font-bold text-white text-sm">Cloud Security</p>
+                </div>
+                <div class="glass p-5 rounded-2xl text-center space-y-2 hover:border-primary transition group">
+                    <i data-lucide="clipboard-check" class="w-8 h-8 text-primary mx-auto group-hover:scale-110 transition"></i>
+                    <p class="font-bold text-white text-sm">Compliance Readiness</p>
+                </div>
+                <div class="glass p-5 rounded-2xl text-center space-y-2 hover:border-primary transition group">
+                    <i data-lucide="lock" class="w-8 h-8 text-primary mx-auto group-hover:scale-110 transition"></i>
+                    <p class="font-bold text-white text-sm">Microsoft 365 Security</p>
+                </div>
+                <div class="glass p-5 rounded-2xl text-center space-y-2 hover:border-primary transition group">
+                    <i data-lucide="user-check" class="w-8 h-8 text-primary mx-auto group-hover:scale-110 transition"></i>
+                    <p class="font-bold text-white text-sm">Identity Management</p>
+                </div>
+                <div class="glass p-5 rounded-2xl text-center space-y-2 hover:border-primary transition group">
+                    <i data-lucide="refresh-cw" class="w-8 h-8 text-primary mx-auto group-hover:scale-110 transition"></i>
+                    <p class="font-bold text-white text-sm">Digital Transformation</p>
+                </div>
+                <div class="glass p-5 rounded-2xl text-center space-y-2 hover:border-primary transition group">
+                    <i data-lucide="activity" class="w-8 h-8 text-primary mx-auto group-hover:scale-110 transition"></i>
+                    <p class="font-bold text-white text-sm">Security Operations</p>
+                </div>
+                <div class="glass p-5 rounded-2xl text-center space-y-2 hover:border-primary transition group">
+                    <i data-lucide="briefcase" class="w-8 h-8 text-primary mx-auto group-hover:scale-110 transition"></i>
+                    <p class="font-bold text-white text-sm">Technology Consulting</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Tech Stack Section -->
+    <!-- Expanded Tech Stack -->
     <section id="tech-stack" class="py-20 border-t border-white/5 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             <div class="text-center space-y-4">
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Tech <span class="text-primary">Stack</span></h2>
-                <p class="text-gray-400 text-sm sm:text-base">Technologies and frameworks I specialize in.</p>
-                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">Tech <span class="text-primary">Stack</span></h2>
+                <p class="text-gray-400 text-sm sm:text-base">Comprehensive platforms, tools, and protocols I work with daily.</p>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Microsoft -->
-                <div class="glass p-6 rounded-2xl space-y-4">
-                    <h3 class="font-bold text-primary flex items-center gap-2"><i data-lucide="microsoft"></i> Microsoft Ecosystem</h3>
+                <div class="glass p-6 rounded-2xl space-y-4 border border-white/10 hover:border-primary transition">
+                    <h3 class="font-bold text-primary text-lg flex items-center gap-2"><i data-lucide="layers"></i> Microsoft Ecosystem</h3>
                     <div class="flex flex-wrap gap-2 text-xs">
-                        <span class="px-2.5 py-1 rounded bg-white/5 border border-white/10">Microsoft 365</span>
-                        <span class="px-2.5 py-1 rounded bg-white/5 border border-white/10">Azure</span>
-                        <span class="px-2.5 py-1 rounded bg-white/5 border border-white/10">Defender</span>
-                        <span class="px-2.5 py-1 rounded bg-white/5 border border-white/10">Intune</span>
-                        <span class="px-2.5 py-1 rounded bg-white/5 border border-white/10">Entra ID</span>
-                        <span class="px-2.5 py-1 rounded bg-white/5 border border-white/10">Teams</span>
-                        <span class="px-2.5 py-1 rounded bg-white/5 border border-white/10">Exchange Online</span>
-                        <span class="px-2.5 py-1 rounded bg-white/5 border border-white/10">SharePoint</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-200">Microsoft 365</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-200">Azure AD / Entra ID</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-200">MS Defender</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-200">Microsoft Intune</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-200">Exchange Online</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-200">SharePoint</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-200">Teams Admin</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-200">Purview</span>
                     </div>
                 </div>
 
                 <!-- Security -->
-                <div class="glass p-6 rounded-2xl space-y-4">
-                    <h3 class="font-bold text-accent flex items-center gap-2"><i data-lucide="shield-alert"></i> Security & Governance</h3>
+                <div class="glass p-6 rounded-2xl space-y-4 border border-white/10 hover:border-accent transition">
+                    <h3 class="font-bold text-accent text-lg flex items-center gap-2"><i data-lucide="shield-alert"></i> Security & Governance</h3>
                     <div class="flex flex-wrap gap-2 text-xs">
-                        <span class="px-2.5 py-1 rounded bg-white/5 border border-white/10">Security Operations</span>
-                        <span class="px-2.5 py-1 rounded bg-white/5 border border-white/10">Risk Management</span>
-                        <span class="px-2.5 py-1 rounded bg-white/5 border border-white/10">Compliance</span>
-                        <span class="px-2.5 py-1 rounded bg-white/5 border border-white/10">Governance</span>
-                        <span class="px-2.5 py-1 rounded bg-white/5 border border-white/10">Vulnerability Mgmt</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-200">SIEM & Sentinel</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-200">SOC 2 Framework</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-200">HIPAA Compliance</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-200">Vulnerability Scanning</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-200">MFA & Conditional Access</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-200">Incident Response</span>
                     </div>
                 </div>
 
                 <!-- Infrastructure -->
-                <div class="glass p-6 rounded-2xl space-y-4">
-                    <h3 class="font-bold text-secondary flex items-center gap-2"><i data-lucide="server"></i> Infrastructure & Cloud</h3>
+                <div class="glass p-6 rounded-2xl space-y-4 border border-white/10 hover:border-secondary transition">
+                    <h3 class="font-bold text-secondary text-lg flex items-center gap-2"><i data-lucide="server"></i> Infrastructure & Cloud</h3>
                     <div class="flex flex-wrap gap-2 text-xs">
-                        <span class="px-2.5 py-1 rounded bg-white/5 border border-white/10">Active Directory</span>
-                        <span class="px-2.5 py-1 rounded bg-white/5 border border-white/10">Windows Server</span>
-                        <span class="px-2.5 py-1 rounded bg-white/5 border border-white/10">Linux</span>
-                        <span class="px-2.5 py-1 rounded bg-white/5 border border-white/10">Networking</span>
-                        <span class="px-2.5 py-1 rounded bg-white/5 border border-white/10">Cloudflare</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-200">Active Directory</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-200">Windows Server</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-200">Linux Administration</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-200">DNS / DHCP / VPN</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-200">Cloudflare WAF</span>
                     </div>
                 </div>
 
-                <!-- Web & Productivity -->
-                <div class="glass p-6 rounded-2xl space-y-4">
-                    <h3 class="font-bold text-primary flex items-center gap-2"><i data-lucide="globe"></i> Web & Productivity</h3>
+                <!-- Web & Tools -->
+                <div class="glass p-6 rounded-2xl space-y-4 border border-white/10 hover:border-primary transition">
+                    <h3 class="font-bold text-primary text-lg flex items-center gap-2"><i data-lucide="globe"></i> Web & Productivity</h3>
                     <div class="flex flex-wrap gap-2 text-xs">
-                        <span class="px-2.5 py-1 rounded bg-white/5 border border-white/10">GitHub</span>
-                        <span class="px-2.5 py-1 rounded bg-white/5 border border-white/10">WordPress</span>
-                        <span class="px-2.5 py-1 rounded bg-white/5 border border-white/10">SEO</span>
-                        <span class="px-2.5 py-1 rounded bg-white/5 border border-white/10">Website Optimization</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-200">GitHub</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-200">WordPress Security</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-200">SEO Audit</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-200">Web Performance</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-200">PowerShell Scripting</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Book Consultation Section -->
+    <!-- Book Consultation -->
     <section id="consultation" class="py-20 relative">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="glass rounded-3xl p-8 sm:p-12 text-center border border-primary/30 relative overflow-hidden">
-                <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-primary/20 rounded-full blur-2xl"></div>
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Let's Discuss Your Technology Goals</h2>
+            <div class="glass rounded-3xl p-8 sm:p-12 text-center border border-primary/40 relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-primary/20 rounded-full blur-3xl"></div>
+                <h2 class="text-3xl sm:text-4xl font-black tracking-tight mb-4">Let's Discuss Your Technology Goals</h2>
                 <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto mb-8">
-                    Whether you're looking to improve cybersecurity, strengthen compliance, optimize Microsoft 365, or modernize your IT environment, let's discuss how I can help.
+                    Whether you're looking to improve cybersecurity, strengthen compliance, optimize Microsoft 365, or outsource IT support, let's connect.
                 </p>
-                <a href="https://calendly.com/dummy-link" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-bgDark bg-primary hover:bg-cyan-300 transition shadow-xl shadow-primary/20">
+                <a href="https://calendly.com/dummy-link" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-extrabold text-bgDark bg-primary hover:bg-cyan-300 transition shadow-2xl shadow-primary/30">
                     <i data-lucide="calendar"></i> Book Free Consultation
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact & Direct Inquiry Form -->
     <section id="contact" class="py-20 border-t border-white/5 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             <div class="text-center space-y-4">
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Get In <span class="text-primary">Touch</span></h2>
-                <p class="text-gray-400 text-sm sm:text-base">Ready to get started? Reach out directly via phone, email, or social media.</p>
-                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">Get In <span class="text-primary">Touch</span></h2>
+                <p class="text-gray-400 text-sm sm:text-base">Ready to get started? Send a direct message or connect via official channels.</p>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Email -->
-                <a href="mailto:murtazarehmat151@gmail.com" class="glass p-6 rounded-2xl text-center space-y-3 hover:border-primary transition group">
-                    <div class="w-12 h-12 rounded-full bg-primary/10 border border-primary/30 text-primary mx-auto flex items-center justify-center group-hover:scale-110 transition">
-                        <i data-lucide="mail"></i>
-                    </div>
-                    <p class="text-xs text-gray-400 uppercase tracking-wider">Email</p>
-                    <p class="text-sm font-semibold text-white break-all">murtazarehmat151@gmail.com</p>
-                </a>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- Info Cards -->
+                <div class="lg:col-span-5 space-y-4">
+                    <a href="mailto:murtazarehmat151@gmail.com" class="glass p-5 rounded-2xl flex items-center gap-4 hover:border-primary transition group block">
+                        <div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 text-primary flex items-center justify-center shrink-0">
+                            <i data-lucide="mail"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Email</p>
+                            <p class="text-sm font-bold text-white break-all">murtazarehmat151@gmail.com</p>
+                        </div>
+                    </a>
 
-                <!-- Phone -->
-                <a href="tel:+923344382898" class="glass p-6 rounded-2xl text-center space-y-3 hover:border-primary transition group">
-                    <div class="w-12 h-12 rounded-full bg-primary/10 border border-primary/30 text-primary mx-auto flex items-center justify-center group-hover:scale-110 transition">
-                        <i data-lucide="phone"></i>
-                    </div>
-                    <p class="text-xs text-gray-400 uppercase tracking-wider">Phone</p>
-                    <p class="text-sm font-semibold text-white">+92 334 4382898</p>
-                </a>
+                    <a href="tel:+923344382898" class="glass p-5 rounded-2xl flex items-center gap-4 hover:border-primary transition group block">
+                        <div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 text-primary flex items-center justify-center shrink-0">
+                            <i data-lucide="phone"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Phone</p>
+                            <p class="text-sm font-bold text-white">+92 334 4382898</p>
+                        </div>
+                    </a>
 
-                <!-- Location -->
-                <div class="glass p-6 rounded-2xl text-center space-y-3">
-                    <div class="w-12 h-12 rounded-full bg-primary/10 border border-primary/30 text-primary mx-auto flex items-center justify-center">
-                        <i data-lucide="map-pin"></i>
+                    <div class="glass p-5 rounded-2xl flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 text-primary flex items-center justify-center shrink-0">
+                            <i data-lucide="map-pin"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Location</p>
+                            <p class="text-sm font-bold text-white">Lahore, Pakistan</p>
+                        </div>
                     </div>
-                    <p class="text-xs text-gray-400 uppercase tracking-wider">Location</p>
-                    <p class="text-sm font-semibold text-white">Lahore, Pakistan</p>
+
+                    <div class="glass p-5 rounded-2xl flex items-center justify-between">
+                        <div>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Social Profiles</p>
+                            <p class="text-sm font-bold text-white">LinkedIn & GitHub</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="https://linkedin.com/in/dummy" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-primary transition"><i class="fa-brands fa-linkedin text-lg"></i></a>
+                            <a href="https://github.com/dummy" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-primary transition"><i class="fa-brands fa-github text-lg"></i></a>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Profiles -->
-                <div class="glass p-6 rounded-2xl text-center space-y-3">
-                    <div class="w-12 h-12 rounded-full bg-primary/10 border border-primary/30 text-primary mx-auto flex items-center justify-center">
-                        <i data-lucide="link"></i>
-                    </div>
-                    <p class="text-xs text-gray-400 uppercase tracking-wider">Social Profiles</p>
-                    <div class="flex justify-center gap-4 pt-1">
-                        <a href="https://linkedin.com/in/dummy" target="_blank" class="text-gray-300 hover:text-primary transition"><i class="fa-brands fa-linkedin text-xl"></i></a>
-                        <a href="https://github.com/dummy" target="_blank" class="text-gray-300 hover:text-primary transition"><i class="fa-brands fa-github text-xl"></i></a>
-                    </div>
+                <!-- Direct Email Inquiry Form -->
+                <div class="lg:col-span-7 glass p-8 rounded-3xl border border-white/10">
+                    <form action="mailto:murtazarehmat151@gmail.com" method="post" enctype="text/plain" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 uppercase mb-2">Name</label>
+                                <input type="text" name="Name" required placeholder="John Doe" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-primary transition">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 uppercase mb-2">Email</label>
+                                <input type="email" name="Email" required placeholder="john@company.com" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-primary transition">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 uppercase mb-2">Phone</label>
+                                <input type="tel" name="Phone" placeholder="+123 456 789" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-primary transition">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 uppercase mb-2">Service Needed</label>
+                                <select name="Service" class="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-primary transition">
+                                    <option value="Cybersecurity">Cybersecurity Services</option>
+                                    <option value="Compliance">Compliance & Audit</option>
+                                    <option value="Microsoft 365">Microsoft 365 / Entra ID</option>
+                                    <option value="IT Outsourcing">IT Outsourcing</option>
+                                    <option value="IT Recruitment">IT Recruitment</option>
+                                    <option value="IT Helpdesk 24/7">IT Helpdesk 24/7</option>
+                                    <option value="Web Security">Web Security</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 uppercase mb-2">Message</label>
+                            <textarea name="Message" rows="4" required placeholder="Describe your inquiry..." class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-primary transition"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 rounded-xl font-bold bg-primary text-bgDark hover:bg-cyan-300 transition shadow-xl shadow-primary/20">
+                            Submit Inquiry
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -668,26 +829,28 @@
         <p>&copy; <span id="year"></span> Murtaza Ali. All rights reserved. Cybersecurity & IT Consulting.</p>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/923344382898" target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-green-500 text-white flex items-center justify-center shadow-2xl hover:bg-green-600 hover:scale-110 transition duration-300">
-        <i class="fa-brands fa-whatsapp text-3xl"></i>
-    </a>
+    <!-- Floating WhatsApp Widget -->
+    <div class="fixed bottom-6 right-6 z-50 flex items-center gap-3">
+        <div class="hidden sm:block glass px-4 py-2 rounded-full border border-green-500/30 text-xs font-semibold text-green-400 shadow-xl animate-pulse">
+            Need a very quick response? Chat on WhatsApp!
+        </div>
+        <a href="https://wa.me/923344382898" target="_blank" class="w-14 h-14 rounded-full bg-green-500 text-white flex items-center justify-center shadow-2xl hover:bg-green-600 hover:scale-110 transition duration-300 shrink-0">
+            <i class="fa-brands fa-whatsapp text-3xl"></i>
+        </a>
+    </div>
 
-    <!-- Scripts -->
+    <!-- JavaScript Animations -->
     <script>
-        // Initialize Lucide Icons
         lucide.createIcons();
-
-        // Footer Year
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Navbar Glass effect on Scroll
+        // Navbar Scroll Glass
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 20) {
-                navbar.classList.add('glass', 'shadow-lg');
+                navbar.classList.add('glass', 'shadow-2xl');
             } else {
-                navbar.classList.remove('glass', 'shadow-lg');
+                navbar.classList.remove('glass', 'shadow-2xl');
             }
         });
 
@@ -698,17 +861,14 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Counter Animation Setup
+        // Counters
         const counters = document.querySelectorAll('.counter');
         let animated = false;
-
         window.addEventListener('scroll', () => {
             const whyMeSection = document.getElementById('why-me');
             if (!whyMeSection) return;
             const pos = whyMeSection.getBoundingClientRect().top;
-            const winHeight = window.innerHeight;
-
-            if (pos < winHeight && !animated) {
+            if (pos < window.innerHeight && !animated) {
                 counters.forEach(counter => {
                     const target = +counter.getAttribute('data-target');
                     let count = 0;
@@ -728,7 +888,7 @@
             }
         });
 
-        // Background Particles Canvas
+        // Canvas Particle Field
         const canvas = document.getElementById('particles-canvas');
         const ctx = canvas.getContext('2d');
         let particles = [];
@@ -745,14 +905,13 @@
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
                 this.size = Math.random() * 2 + 0.5;
-                this.speedX = (Math.random() - 0.5) * 0.5;
-                this.speedY = (Math.random() - 0.5) * 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.4;
+                this.speedY = (Math.random() - 0.5) * 0.4;
                 this.alpha = Math.random() * 0.5 + 0.2;
             }
             update() {
                 this.x += this.speedX;
                 this.y += this.speedY;
-
                 if (this.x < 0) this.x = canvas.width;
                 if (this.x > canvas.width) this.x = 0;
                 if (this.y < 0) this.y = canvas.height;
@@ -768,7 +927,7 @@
 
         function initParticles() {
             particles = [];
-            const count = Math.floor((canvas.width * canvas.height) / 15000);
+            const count = Math.floor((canvas.width * canvas.height) / 14000);
             for (let i = 0; i < count; i++) {
                 particles.push(new Particle());
             }
