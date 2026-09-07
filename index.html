@@ -163,22 +163,21 @@
                 </div>
             </div>
 
-            <!-- Profile Picture -->
+        <!-- Profile Picture -->
             <div class="lg:col-span-5 flex justify-center">
                 <div class="relative animate-float">
                     <div class="absolute -inset-1 bg-gradient-to-r from-primary via-secondary to-accent rounded-3xl blur-xl opacity-50"></div>
                     <div class="relative glass rounded-3xl p-4 neon-border max-w-sm w-full overflow-hidden">
-                        <img src="https://i.ibb.co/L8xJ62Z/murtaza-ali.png" alt="Murtaza Ali" class="rounded-2xl w-full object-cover shadow-2xl transition hover:scale-105 duration-500">
+                        <!-- Picture + reserved aspect ratio to avoid layout shift; using repo raw URL as fallback -->
+                        <picture>
+                            <!-- If you add an optimized webp later, place its URL here as the first source -->
+                            <img src="https://raw.githubusercontent.com/MurtazaaaAli/IT-Consultant/main/Murtaza-Pic.jpeg" alt="Murtaza Ali" class="profile-img rounded-2xl shadow-2xl" loading="lazy" decoding="async">
+                        </picture>
                         <div class="mt-4 p-3 rounded-xl bg-black/60 backdrop-blur border border-white/10 text-center">
                             <p class="text-base font-bold text-white">Murtaza Ali</p>
-                            <p class="text-xs text-primary font-medium">Cybersecurity & M365 Specialist</p>
+                            <p class="text-xs text-primary font-medium">Cybersecurity & IT Consultnat</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+                        
     <!-- About Me Section -->
     <section id="about" class="py-20 border-t border-white/5 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
